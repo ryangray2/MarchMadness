@@ -1,0 +1,382 @@
+<!doctype html>
+
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+
+  <title>TKW All-Time Team</title>
+  <meta name="description" content="TKW All-Time Team">
+  <meta name="author" content="SitePoint">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="AllTime5.css">
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lexend+Deca&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Francois+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Carter+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Manjari&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/d889c89a39.js"></script>
+</head>
+
+<body onload="test()" onresize="sC()">
+  <div class="row bg-transparent" id="logoRow">
+    <div class="col-xs-1">
+
+    </div>
+    <div class="col-xs-10">
+      <img id="logo" src="logo1.png" class="img-responsive center-block animation-target" style="max-height: 500px">
+    </div>
+    <div class="col-xs-1">
+    </div>
+  </div>
+  <!-- <div class="row text-center" id="ryanBar">
+    <div class="col-xs-1">
+    </div>
+    <div class="col-xs-5 smack-target" id="ryanBy">
+      <h4>By: Ryan Gray</h4>
+    </div>
+    <a href="https://twitter.com/Ryan2Gray" target="_blank"><div class="col-xs-5 smack-target" id="ryanTwitter">
+
+      <h4><i class="fab fa-twitter"></i>@Ryan2Gray</h4>
+    </div></a>
+    <div class="col-xs-1">
+    </div>
+  </div>
+  <div class="row text-center" id="wE" style="color: white" >
+    <div class="col-xs-12">
+      <h5>(Writers' Edition)</h4>
+
+    </div>
+  </div> -->
+  <div class="row" id="firstButtonRow">
+    <div class="col-xs-12">
+      <button  id="firstButton" type="button" class="center-block btn btn-primary btn-lg animation-target2" onclick="firstButton()">Start</button>
+        <!-- <button  id="firstButton" type="button" class="center-block animation-target2" onclick="firstButton()">Start</button> -->
+    </div>
+  </div>
+  <div class="row" id="howToTitleRow">
+    <div class="col-xs-12 text-center">
+      <h1 id="howToTitle">How To Play</h1>
+    </div>
+  </div>
+  <div class="row" id="howFirstRow">
+    <div class="col-xs-12 text-center">
+      <h3 id="howFirst">Every player has a price. You have $150 to build a team of 5 starters. Click/tap a player's image to remove them from your team.</h3>
+    </div>
+  </div>
+  <div class="row" id="how1ARow">
+    <div class="col-xs-12 text-center">
+      <h4 id="how1A">There are no position restrictions, however not building a complete team might negatively affect your team's rating.</h4>
+    </div>
+  </div>
+  <div class="row center-block" id="secondButtonRow">
+    <div class="col-xs-12">
+      <button type="button" class="center-block btn btn-primary btn-lg" id="secondButton" onclick="secondButton()">Let's Go!</button>
+    </div>
+  </div>
+<div id="loading">
+
+  <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+</div>
+<nav class="navbar navbar-fixed-top " id="teamNav">
+  <div class="container-no-padding fixed-top" id="selectTop">
+    <div class="row" id="yourTeamHeader">
+      <div class="col-xs-12 text-center">
+        <h3 id="yourTeamText">Your Team</h3>
+      </div>
+    </div>
+    <div class="container-no-padding" id="teamCircles">
+      <div class="row center-block" id="teamCirclesRow1" style="height: auto">
+        <div class="col-xs-1" id="specialCircle">
+        </div>
+        <div class="col-xs-2 circle" id="c1">
+
+        </div>
+        <div class="col-xs-2 circle" id="c2">
+
+        </div>
+        <div class="col-xs-2 circle" id="c3">
+
+        </div>
+        <div class="col-xs-2 circle" id="c4">
+
+        </div>
+        <div class="col-xs-2 circle" id="c5">
+
+        </div>
+        <div class="col-xs-1 circle2">
+        </div>
+      </div>
+      <!-- <div class="row center-block" id="teamCirclesRow2" style="height: auto">
+        <div class="col-xs-3" id="specialCircle2">
+        </div>
+        <div class="col-xs-2 circle" id="c6">
+
+        </div>
+        <div class="col-xs-2 circle" id="c7">
+
+        </div>
+        <div class="col-xs-2 circle" id="c8">
+
+        </div>
+        <div class="col-xs-3">
+        </div>
+      </div> -->
+    </div>
+    <div class="row" id="yourTeamHeader">
+      <div class="col-xs-12 text-center">
+        <h4 id="money">$150</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="row text-center" id="positionBar">
+    <div class="col-xs-1">
+    </div>
+    <div class="col-xs-2 posCol" id="PG">
+      <h5>PG</h5>
+    </div>
+    <div class="col-xs-2 posCol" id="SG">
+      <h5>SG</h5>
+    </div>
+    <div class="col-xs-2 posCol" id="SF">
+      <h5>SF</h5>
+    </div>
+    <div class="col-xs-2 posCol" id="PF">
+      <h5>PF</h5>
+    </div>
+    <div class="col-xs-2 posCol" id="C">
+      <h5>C</h5>
+    </div>
+    <div class="col-xs-1">
+    </div>
+  </div>
+  </nav>
+  <div id="playersAll">
+  <div class="container-fluid hite">
+    <div class="row">
+      <div class="col-xs-3">
+        <div class="imageTry"></div>
+        <!-- <img class="imageItself" style="object-fit: cover" src="https://d2cwpp38twqe55.cloudfront.net/req/201907151/images/players/ewingpa01.jpg"> -->
+      </div>
+      <div class="col-xs-6 playerMidCol text-center">
+        <div class="row">
+          <div class="col-xs-12">
+            <h4 class="playerFirstName">PATRICK</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <h2 class="playerLastName">EWING</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <h4 class="playerYears">1985 - 2000</h4>
+          </div>
+        </div>
+        <div class="row posHeightRow">
+          <div class="col-xs-2">
+          </div>
+          <div class="col-xs-4">
+            <h5 class="playerPosition">C</h5>
+          </div>
+          <div class="col-xs-4">
+            <h5 class="playerHeight">7'0"</h5>
+          </div>
+          <div class="col-xs-2">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <h5 class="playerAllStars">11x All Star</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <h5 class="playerHallOfFame">Hall of Famer</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-3 addButton text-center">
+        <div class="row">
+          <div class="col-xs-12">
+            <h3 class="addText">ADD</h3>
+          </div>
+          <div class="col-xs-12">
+            <h3 class="priceText">($64)</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="row text-center" id="resultRow">
+  <div class="col-xs-12">
+    <h2 id="resultsText">Results</h2>
+  </div>
+</div>
+<div id="clone">
+</div>
+<div class="row text-center" id="shootingRow">
+  <div class="col-xs-4">
+    <h5>3 Pt.</h5>
+  </div>
+  <div class="col-xs-1 shootingStar" id="sS1">
+    <i class="fas fa-star"></i>
+  </div>
+  <div class="col-xs-1 shootingStar" id="sS2">
+    <i class="fas fa-star"></i>
+  </div>
+  <div class="col-xs-1 shootingStar" id="sS3">
+    <i class="fas fa-star"></i>
+  </div>
+  <div class="col-xs-1 shootingStar" id="sS4">
+    <i class="fas fa-star"></i>
+  </div>
+  <div class="col-xs-1 shootingStar" id="sS5">
+    <i class="fas fa-star"></i>
+  </div>
+  <div class="col-xs-3">
+  </div>
+</div>
+<div class="row text-center" id="passingRow">
+  <div class="col-xs-4">
+    <h5>Passing</h5>
+  </div>
+  <div class="col-xs-1 passingStar" id="pS1">
+    <i class="fas fa-star"></i>
+  </div>
+  <div class="col-xs-1 passingStar" id="pS2">
+    <i class="fas fa-star"></i>
+  </div>
+  <div class="col-xs-1 passingStar" id="pS3">
+    <i class="fas fa-star"></i>
+  </div>
+  <div class="col-xs-1 passingStar" id="pS4">
+    <i class="fas fa-star"></i>
+  </div>
+  <div class="col-xs-1 passingStar" id="pS5">
+    <i class="fas fa-star"></i>
+  </div>
+  <div class="col-xs-3">
+  </div>
+</div>
+<div class="row text-center" id="reboundingRow">
+  <div class="col-xs-4">
+    <h5>Rebounding</h5>
+  </div>
+  <div class="col-xs-1 reboundingStar" id="rS1">
+    <i class="fas fa-star"></i>
+  </div>
+  <div class="col-xs-1 reboundingStar" id="rS2">
+    <i class="fas fa-star"></i>
+  </div>
+  <div class="col-xs-1 reboundingStar" id="rS3">
+    <i class="fas fa-star"></i>
+  </div>
+  <div class="col-xs-1 reboundingStar" id="rS4">
+    <i class="fas fa-star"></i>
+  </div>
+  <div class="col-xs-1 reboundingStar" id="rS5">
+    <i class="fas fa-star"></i>
+  </div>
+  <div class="col-xs-3">
+  </div>
+</div>
+
+<div class="row text-center" id="offenseRow">
+  <div class="col-xs-4">
+    <h3>Offense</h3>
+  </div>
+  <div class="col-xs-1 offenseStar" id="oS1">
+    <i class="fas fa-star fa-2x"></i>
+  </div>
+  <div class="col-xs-1 offenseStar" id="oS2">
+    <i class="fas fa-star fa-2x"></i>
+  </div>
+  <div class="col-xs-1 offenseStar" id="oS3">
+    <i class="fas fa-star fa-2x"></i>
+  </div>
+  <div class="col-xs-1 offenseStar" id="oS4">
+    <i class="fas fa-star fa-2x"></i>
+  </div>
+  <div class="col-xs-1 offenseStar" id="oS5">
+    <i class="fas fa-star fa-2x"></i>
+  </div>
+  <div class="col-xs-3">
+  </div>
+</div>
+
+<div class="row text-center" id="defenseRow">
+  <div class="col-xs-4">
+    <h3>Defense</h3>
+  </div>
+  <div class="col-xs-1 defenseStar" id="dS1">
+    <i class="fas fa-star fa-2x"></i>
+  </div>
+  <div class="col-xs-1 defenseStar" id="dS2">
+    <i class="fas fa-star fa-2x"></i>
+  </div>
+  <div class="col-xs-1 defenseStar" id="dS3">
+    <i class="fas fa-star fa-2x"></i>
+  </div>
+  <div class="col-xs-1 defenseStar" id="dS4">
+    <i class="fas fa-star fa-2x"></i>
+  </div>
+  <div class="col-xs-1 defenseStar" id="dS5">
+    <i class="fas fa-star fa-2x"></i>
+  </div>
+  <div class="col-xs-3">
+  </div>
+</div>
+
+<div class="row text-center" id="overallRow">
+  <div class="col-xs-1">
+  </div>
+  <div class="col-xs-4">
+    <h2 class="overallText">Overall</h2>
+  </div>
+
+  <div class="col-xs-4 overallRating">
+    <h2 class="overallText" id="score">10/10</h2>
+  </div>
+  <div class="col-xs-3">
+  </div>
+
+</div>
+<div class="row text-center" id="TKWRow">
+  <div class="col-xs-6" id="share">
+    <h4>Share your results with us!</h4>
+  </div>
+  <a href="https://twitter.com/TheKnicksWall" target="_blank"><div class="col-xs-6" id="TKWtwitter">
+    <h4><i class="fab fa-twitter"></i>@TheKnicksWall</h4>
+  </div></a>
+</div>
+<div class="row text-center" id="resultsButtonRow">
+  <div class="col-xs-6" id="restart">
+    <button type="button" class="center-block btn btn-primary btn-lg" id="Button" onclick="document.location.reload(true)">Restart</button>
+  </div>
+  <!-- <div class="col-xs-6" id="TKWStaffPicks">
+    <button type="button" class="btn btn-primary btn-lg" id="Button" onclick="TKWStaffPicksButton()">TKW Staff Picks</button>
+  </div> -->
+</div>
+<div id="TKWS">
+</div>
+
+
+
+
+  <script src="main.js"></script>
+  <script src="collegeplayers.js"></script>
+  <!-- <script src="staff.js"></script> -->
+</body>
+</html>
