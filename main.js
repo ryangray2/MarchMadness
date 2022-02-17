@@ -1,6 +1,7 @@
 var lastPos = "begin";
 var moneyLeft = 150;
 var roster = [];
+var rating = 0;
 
 var results = {
   three: 0,
@@ -153,7 +154,7 @@ function test() {
       createPlayerList("C");
   });
 
-  players.sort(function(a, b){return b.price - a.price});
+  players.sort(function(a, b){return b.wS - a.wS});
 
   // var testData = players;
   //   // testData.sort(function(a, b){return (b.per + (b.wS / 2)) - (a.per + (a.wS / 2))});
@@ -484,7 +485,7 @@ function createPlayerList(input) {
   }
   if (input != "none") {
     var ele = document.getElementById(input);
-    ele.style.backgroundColor = "#f55709";
+    ele.style.backgroundColor = "#19497f";
     ele.style.color = "white";
     if (lastPos != "begin") {
       var ele2 = document.getElementById(lastPos);
@@ -784,13 +785,13 @@ function shootingTest() {
   if (shoot < 168.75) {
     document.getElementById('sS5').style.display = "none";
   }
-  if (shoot < 125) {
+  if (shoot < 150) {
     document.getElementById('sS4').style.display = "none";
   }
-  if (shoot < 100) {
+  if (shoot < 125) {
     document.getElementById('sS3').style.display = "none";
   }
-  if (shoot < 75) {
+  if (shoot < 105) {
     document.getElementById('sS2').style.display = "none";
   }
 }
@@ -842,15 +843,15 @@ function offenseTest() {
   }
 
   console.log("offense: " + offense);
-  var dum = offense * .375;
-  offense += dum;
-  if (offense < 30) {
+  // var dum = offense * .375;
+  // offense += dum;
+  if (offense < 27) {
     document.getElementById('oS5').style.display = "none";
   }
-  if (offense < 27) {
+  if (offense < 25) {
     document.getElementById('oS4').style.display = "none";
   }
-  if (offense < 23) {
+  if (offense < 22) {
     document.getElementById('oS3').style.display = "none";
   }
   if (offense < 18) {
@@ -864,8 +865,8 @@ function defenseTest() {
     defense += roster[i].defWS;
   }
   console.log("defense: " + defense);
-  var dum = defense * .375;
-  defense += dum;
+  // var dum = defense * .375;
+  // defense += dum;
   if (defense < 17) {
     document.getElementById('dS5').style.display = "none";
   }
@@ -910,13 +911,21 @@ console.log("b: " + formula);
   }
   if (formula < 60) {
     console.log(formula);
-    formula /= 5;
-    ovrScore = formula;
+    // formula /= 4.5;
+    ovrScore = formula - 10;
+    console.log(ovrScore);
+    ovrScore /= 35;
+    ovrScore *= 10;
+    console.log(ovrScore);
     ovrScore = checkStarters(ovrScore);
     ovrScore = Math.round(10*ovrScore)/10;
     if (ovrScore < 0) {
       ovrScore = 0;
     }
+    if (ovrScore > 10) {
+      ovrScore = 10;
+    }
+    rating = ovrScore;
     document.getElementById('score').innerHTML = ovrScore + "/10";
     return;
   }
@@ -964,6 +973,7 @@ function staffScoreTest(sr) {
     if (ovrScore < 0) {
       ovrScore = 0;
     }
+
     return ovrScore;
   }
   var ovrScore = formula / 68;
@@ -1085,6 +1095,27 @@ function checkStarters(num) {
   console.log(bigs + ":bigs");
   console.log(guards + ":guards");
   return num;
+}
+
+function wordle() {
+  var content = "March Madness Team Builder\n\n"
+  + roster[0].firstName + " " + roster[0].lastName + " ($" + roster[0].price.toString() + ")\n"
++ roster[1].firstName + " " + roster[1].lastName + " ($" + roster[1].price.toString() + ")\n"
++ roster[2].firstName + " " + roster[2].lastName + " ($" + roster[2].price.toString() + ")\n"
++ roster[3].firstName + " " + roster[3].lastName + " ($" + roster[3].price.toString() + ")\n"
++ roster[4].firstName + " " + roster[4].lastName + " ($" + roster[4].price.toString() + ")\n\n"
++ "Rating: " + rating.toString() + "/10\n\n"
++ "@WhistleSports";
+
+navigator.clipboard.writeText(content)
+    .then(() => {
+    console.log("Text copied to clipboard...")
+})
+    .catch(err => {
+    console.log('Something went wrong', err);
+})
+
+document.getElementById("copied").style.display = "block";
 }
 
 

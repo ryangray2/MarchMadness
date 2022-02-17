@@ -29,6 +29,7 @@ button {
   animation-duration: 1200ms;
 }
 
+
 #logo {
   /* animation-duration: 3s; */
   animation-name: animation;
@@ -129,10 +130,10 @@ button {
 }
 
 #yourTeamHeader {
-  background-color: #f55709;
+  background-color: #1b91ff;
   color: white;
-  border-bottom: 2px solid #b94105;
-  border-top: 2px solid #b94105;
+  border-bottom: 2px solid #18497f;
+  border-top: 2px solid #18497f;
 }
 
 
@@ -171,7 +172,7 @@ button {
 }
 
 #teamCircles {
-  background-image: url("https://cdn.pixabay.com/photo/2017/03/01/19/23/seamless-2109397_960_720.jpg");
+  background-image: url("blueBG.png");
 }
 
 #positionBar {
@@ -197,7 +198,7 @@ button {
 
 .addButton {
   height: 200px;
-      background-color: #f55709;
+      background-color: #19497f;
       border: 2px solid #aedaff;
       cursor: pointer;
 }
@@ -231,10 +232,9 @@ button {
 }
 
 .hmmImage {
-    background-image: url("blueBG.png");
+    background-image: url("darkBlueBG.png");
     padding-left: 0px;
     padding-right: 0px;
-
 }
 
 #ryanBar {
@@ -297,14 +297,14 @@ width:100%;
   margin-top: 0px;
   color: white;
   font-family: "Righteous";
-  text-shadow: 0px 5px 0px #CE5937;
+  text-shadow: 0px 5px 0px #19497f;
 }
 
 .playerFirstName {
   margin-bottom: 0px;
   color: white;
   font-family: "Righteous";
-  text-shadow: 0px 3px 0px #CE5937;
+  text-shadow: 0px 3px 0px #19497f;
 }
 
 .addText {
@@ -398,7 +398,7 @@ width:100%;
   background-color: #0090fa;
 border-bottom: 5px solid white;
 color: white;
-text-shadow: 0px 5px 0px #CE5937;
+text-shadow: 0px 5px 0px  #19497f;
 font-family: "Bree Serif";
 }
 
@@ -477,7 +477,7 @@ font-family: "Bree Serif";
 
 .overallText {
   margin-top: 10px;
-  text-shadow: 0px 5px 0px #CE5937;
+  text-shadow: 0px 5px 0px #19497f;
 }
 
 .overallRating {
@@ -485,7 +485,7 @@ font-family: "Bree Serif";
   font-family: "Lexend Deca";
 
   background-color:#1490fa;
-  text-shadow: 0px 5px 0px #CE5937;
+  text-shadow: 0px 5px 0px #19497f;
 }
 
 .smack-target {
@@ -599,7 +599,7 @@ font-family: "Bree Serif";
   height: 300%;
   z-index: 10000;
   position: absolute;
-  background-image: url("https://cdn.pixabay.com/photo/2017/03/01/19/23/seamless-2109397_960_720.jpg");
+  background-image: url("blueBG.png");
 }
 
 .staffScore {
@@ -681,10 +681,23 @@ box-shadow: 10px 10px 0px -2px rgba(27,116,194,1);
   display: none;
 }
 
-#TKWtwitter {
-  background-color: #0b6abe;
+#Whistletwitter {
+  background-color: #be0b0b;
   color: white;
   font-family: "Bree Serif";
+}
+
+#copied {
+  display: none;
+  background-color: #ffffff;
+  color: #0b6abe;
+  font-family: "Lexend Deca";
+  border-radius: 20px;
+}
+
+.or {
+    color: #ffffff;
+    font-family: "Lexend Deca";
 }
 
 #resultsButtonRow {
