@@ -1,6 +1,14 @@
+@font-face { font-family: MindTheCaps; src: url('MindTheCaps.ttf'); }
+@font-face { font-family: TheOrange; src: url('TheOrange.ttf'); }
+@font-face { font-family: Hyperjump; src: url('Hyperjump Bold.ttf'); }
+@font-face { font-family: Sketch; src: url('Sketchzone.otf'); }
+
 body {
-  background-image: url("blueBG.png");
+  background-image: url("beigeBG.png");
+  background-size: cover;
+  max-width: 100%;
 }
+
 
 /* .row {
     background-color: #ffede3;
@@ -10,6 +18,49 @@ body {
   display: none;
   animation-name: howTo;
   animation-duration: 1200ms;
+}
+
+#firstPlayerPic {
+  max-height: 100%;
+  margin:auto;
+}
+
+.picButts {
+  width: 20vh;
+  cursor: pointer;
+}
+
+.playerPicBG {
+  position: absolute;
+  /* overflow: hidden; */
+}
+
+#playerImagesBG {
+  height: 100%;
+      width: 100%;
+      margin: auto;
+      overflow: hidden;
+      position: absolute;
+
+}
+
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  height: 100%;
+}
+
+#over {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-size: cover;
+  /* background-blend-mode: color-dodge; */
+  background-repeat: repeat;
+  z-index: 1000;
+  background-image: url(newBG.png);
 }
 
 button {
@@ -27,6 +78,8 @@ button {
   display: none;
   animation-name: howTo;
   animation-duration: 1200ms;
+  font-family: Hyperjump !important;
+  color: #0c2165;
 }
 
 
@@ -121,7 +174,7 @@ button {
 #secondButtonRow {
   display: none;
   /* background-color: red; */
-  width: 100%;
+
     animation-name: animation2;
 }
 
@@ -130,7 +183,7 @@ button {
 }
 
 #yourTeamHeader {
-  background-color: #1b91ff;
+  background-color: #0c2165;
   color: white;
   border-bottom: 2px solid #18497f;
   border-top: 2px solid #18497f;
@@ -172,12 +225,14 @@ button {
 }
 
 #teamCircles {
-  background-image: url("blueBG.png");
+  background-image: url("beigeBG.png");
+  background-size: cover;
 }
 
 #positionBar {
   background-color: white;
   display: none;
+  font-family: Hyperjump !important;
 }
 
 #positionText {
@@ -187,7 +242,8 @@ button {
 #yourTeamText {
   margin-top: 5px;
     margin-bottom: 5px;
-    font-family: "Permanent Marker"
+    font-family: "Permanent Marker";
+    color: #f8edc1;
 }
 
 .hite {
@@ -205,34 +261,37 @@ button {
 
 .playerHeight {
   /* margin-top: auto; */
-    font-family: "Lexend Deca";
+    font-family: "Hyperjump";
     color: white;
+    color: #f8edc1
 }
 
 .playerPosition {
   /* margin-top: auto; */
-    font-family: "Lexend Deca";
+    font-family: "Hyperjump";
     color: white;
+    color: #f8edc1
 }
 .playerYears {
   margin-top: auto;
-  font-family: "Kaushan Script";
+  font-family: "Hyperjump";
   color: white;
+  color: #f8edc1
 }
 
 .playerAllStars {
-  font-family: "Lexend Deca";
+  font-family: "Hyperjump";
   color: orange;
 }
 
 .playerHallOfFame {
   margin-top: auto;
-  font-family: "Lexend Deca";
+  font-family: "Hyperjump";
   color: gold;
 }
 
 .hmmImage {
-    background-image: url("darkBlueBG.png");
+    background-image: url("noDots.png");
     padding-left: 0px;
     padding-right: 0px;
 }
@@ -285,7 +344,7 @@ width:100%;
 
 .playerMidCol {
   height:200px;
-  background-image: url("cf.png");
+  background-image: url("newBG.png");
   background-repeat: repeat;
   background-size: cover;
   /* border-top: 2px solid #aedaff;
@@ -296,46 +355,57 @@ width:100%;
 .playerLastName {
   margin-top: 0px;
   color: white;
-  font-family: "Righteous";
-  text-shadow: 0px 5px 0px #19497f;
+  font-family: "MindTheCaps";
+  /* text-shadow: 0px 5px 0px #19497f; */
 }
 
 .playerFirstName {
   margin-bottom: 0px;
   color: white;
-  font-family: "Righteous";
-  text-shadow: 0px 3px 0px #19497f;
+  font-family: "MindTheCaps";
+  /* text-shadow: 0px 3px 0px #19497f; */
+}
+
+.playerSchool {
+  margin-bottom: 2px;
+  margin-top: 2px;
+  color: white;
+  font-family: "Hyperjump";
+  color: #f8edc1
+  /* text-shadow: 0px 3px 0px #19497f; */
 }
 
 .addText {
   margin-top: 62px;
   color: white;
-  font-family: "Francois One";
+  font-family: "Hyperjump";
 }
 
 
 .priceText {
   margin-top: auto;
   color: white;
-  font-family: "Francois One";
+  font-family: "Hyperjump";
 }
 
 #howToTitle {
-  color: white;
-    background-color: #337ab7;
-    border-top: 10px solid white;
-    border-bottom: 10px solid white;
-    font-family: "Francois One";
+  color: #0c2165;
+  /* background-color: #337ab7; */
+  /* border-top: 10px solid white; */
+  /* border-bottom: 10px solid white; */
+  font-family: "MindTheCaps";
+  font-size: 7vh;
+}
 }
 
 #how1A {
-  font-family: Lexend Deca;
-  color: white;
+  font-family: Hyperjump !important;
+  color: #0c2165;
 }
 
 #howFirst {
-  font-family: Lexend Deca;
-  color: white;
+  font-family: Hyperjump;
+  color: #0c2165;
 }
 
 #playersAll {
@@ -393,13 +463,15 @@ width:100%;
 
 #resultRow {
   display: none;
-  animation-name: smack;
-  animation-duration: 750ms;
-  background-color: #0090fa;
-border-bottom: 5px solid white;
-color: white;
-text-shadow: 0px 5px 0px  #19497f;
-font-family: "Bree Serif";
+      animation-name: smack;
+      animation-duration: 750ms;
+      background-color: #0090fa;
+      background-image: url(newBG.png);
+      background-size: cover;
+      border-bottom: 5px solid white;
+      color: white;
+      text-shadow: 0px 5px 0px #19497f;
+      font-family: 'MindTheCaps';
 }
 
 #clone {
@@ -409,83 +481,82 @@ font-family: "Bree Serif";
 #shootingRow {
   display: none;
   padding-top: 5px;
-  color: white;
-  font-family: "Pacifico";
+  color: #151e45;
+  font-family: 'Hyperjump';
 }
 
 #passingRow {
   display: none;
-  color: white;
+    color: #151e45;
   font-family: "Pacifico";
   /* padding-top: 30px; */
 }
 
 #reboundingRow {
   display: none;
-  color: white;
+    color: #151e45;
   font-family: "Pacifico";
   /* padding-top: 30px; */
 }
 
 #offenseRow {
   display: none;
-  color: white;
+    color: #151e45;
   font-family: "Pacifico";
   /* padding-top: 30px; */
 }
 
 #defenseRow {
   display: none;
-  color: white;
+    color: #151e45;
   font-family: "Pacifico";
   /* padding-top: 30px; */
 }
 
 #overallRow {
   display: none;
-  color: white;
-  font-family: "Pacifico";
-  border-top: 3px solid;
-    border-bottom: 3px solid;
+      color: #27305a;
+      font-family: 'MindTheCaps';
+      border-top: 3px solid;
+      border-bottom: 3px solid;
 }
 
 .shootingStar {
   margin-top: 8px;
-    color: white;
+  color: #192147;
 
 }
 
 .passingStar {
   margin-top: 8px;
-    color: white;
+  color: #192147;
 }
 
 .reboundingStar {
   margin-top: 8px;
-    color: white;
+  color: #192147;
 }
 
 .offenseStar {
   margin-top: 15px;
-    color: white;
+  color: #192147;
 }
 
 .defenseStar {
   margin-top: 15px;
-    color: white;
+  color: #192147;
 }
 
 .overallText {
   margin-top: 10px;
-  text-shadow: 0px 5px 0px #19497f;
+  text-shadow: 0px 3px 0px #6e84ea;
 }
 
 .overallRating {
   color: white;
-  font-family: "Lexend Deca";
-
-  background-color:#1490fa;
-  text-shadow: 0px 5px 0px #19497f;
+      font-family: 'Hyperjump';
+      background-color: #27305a;
+      text-shadow: 0px 5px 0px #19497f;
 }
 
 .smack-target {
@@ -590,7 +661,9 @@ font-family: "Bree Serif";
 }
 
 #money {
-  font-family: "Lexend Deca";
+  font-family: Hyperjump;
+  color: #f8edc1;
+
 }
 
 #loading {
@@ -599,7 +672,41 @@ font-family: "Bree Serif";
   height: 300%;
   z-index: 10000;
   position: absolute;
-  background-image: url("blueBG.png");
+  background-image: url("newBG.png");
+  background-size: contain;
+}
+
+#loadingPlayer {
+
+  top: 0px;
+  width: 100%;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0%;
+}
+
+#loadingPlayer2 {
+
+  top: 0px;
+  width: 100%;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0%;
+  animation: fadeInFromNone 2s normal forwards;
+}
+
+@-webkit-keyframes fadeInFromNone {
+    0% {
+
+        opacity: 0;
+    }
+
+    100% {
+
+        opacity: 1;
+    }
 }
 
 .staffScore {
@@ -672,9 +779,9 @@ box-shadow: 10px 10px 0px -2px rgba(27,116,194,1);
 }
 
 #share {
-  background-color: #ffffff;
-  color: #0b6abe;
-  font-family: "Lexend Deca";
+  background-color: #27305a;
+  color: #ffffff;
+  font-family: 'Hyperjump';
 }
 
 #TKWRow {
@@ -682,9 +789,9 @@ box-shadow: 10px 10px 0px -2px rgba(27,116,194,1);
 }
 
 #Whistletwitter {
-  background-color: #be0b0b;
-  color: white;
-  font-family: "Bree Serif";
+      background-color: #be0b0b;
+      color: white;
+      font-family: 'Carter One';
 }
 
 #copied {
@@ -696,8 +803,8 @@ box-shadow: 10px 10px 0px -2px rgba(27,116,194,1);
 }
 
 .or {
-    color: #ffffff;
-    font-family: "Lexend Deca";
+  color: #27305a;
+      font-family: 'Hyperjump';
 }
 
 #resultsButtonRow {
@@ -893,6 +1000,36 @@ right: 0;
   81.48% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   84.68% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+}
+
+
+.progress {
+  background: rgba(255,255,255,0.1);
+  justify-content: flex-start;
+  border-radius: 100px;
+  align-items: center;
+  position: relative;
+  top: 15%;
+  padding: 0 5px;
+  display: flex;
+  height: 40px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.progress-value {
+  animation: load 2s normal forwards;
+  box-shadow: 0 10px 40px -10px #fff;
+  border-radius: 100px;
+  background: #fff;
+  height: 30px;
+  width: 0;
+}
+
+@keyframes load {
+  0% { width: 0; }
+  100% { width: 100%; }
 }
 
 @keyframes smack {

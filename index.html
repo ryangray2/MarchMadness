@@ -10,8 +10,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="AllTime5.css">
     <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
@@ -26,12 +26,22 @@
 </head>
 
 <body onload="test()" onresize="sC()">
+  <!-- <div  id="over">
+
+
+        <img id="firstPlayerPic" src="melo.png">
+
+  </div> -->
+  <div id="playerImagesBG">
+
+    <!-- <img src="melo.png" style="position: absolute"> -->
+  </div>
   <div class="row bg-transparent" id="logoRow">
     <div class="col-xs-1">
 
     </div>
     <div class="col-xs-10">
-      <img id="logo" src="logo1.png" class="img-responsive center-block animation-target" style="max-height: 500px">
+      <img id="logo" src="Bestlogo.png" class="img-responsive center-block animation-target" style="max-height: 500px">
     </div>
     <div class="col-xs-1">
     </div>
@@ -55,9 +65,10 @@
 
     </div>
   </div> -->
-  <div class="row" id="firstButtonRow">
+  <div class="row text-center" id="firstButtonRow">
     <div class="col-xs-12">
-      <button  id="firstButton" type="button" class="center-block btn btn-primary btn-lg animation-target2" onclick="firstButton()">Start</button>
+      <img class="picButts"  onmouseout="unhoverButt(this)" onmouseover="hoverButt(this)" src="startButt.png" onclick="firstButton()">
+      <!-- <a  id="firstButton" type="button" class="center-block btn btn-primary btn-xl animation-target2" onclick="firstButton()">Start</a> -->
         <!-- <button  id="firstButton" type="button" class="center-block animation-target2" onclick="firstButton()">Start</button> -->
     </div>
   </div>
@@ -81,14 +92,20 @@
       <h4 id="how1A"></h4>
     </div>
   </div>
-  <div class="row center-block" id="secondButtonRow">
-    <div class="col-xs-12">
-      <button type="button" class="center-block btn btn-primary btn-lg" id="secondButton" onclick="secondButton()">Let's Go!</button>
+  <div class="row" id="secondButtonRow">
+    <div class="col-xs-12 text-center">
+          <img class="picButts"  onmouseout="unhoverButt(this)" onmouseover="hoverButt(this)" src="startButt.png" onclick="secondButton()">
     </div>
   </div>
 <div id="loading">
 
-  <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+  <img id="loadingPlayer" src="franksil.png">
+  <img id="loadingPlayer2" src="frankfull.png">
+  <!-- <div class="lds-ring"><div></div><div></div><div></div><div></div></div> -->
+  <div class="progress">
+  <div class="progress-value"></div>
+</div>
+
 </div>
 <nav class="navbar navbar-fixed-top " id="teamNav">
   <div class="container-no-padding fixed-top" id="selectTop">
@@ -374,8 +391,8 @@
 </div>
 
 <div class="row text-center" id="resultsButtonRow">
-  <div class="col-xs-12">
-    <button type="button" class="center-block btn btn-primary btn-lg" id="Button" onclick="wordle()">Share</button>
+  <div class="col-xs-12 text-center">
+    <img class="picButts"  onmouseout="shareunhoverButt(this)" onmouseover="sharehoverButt(this)" src="share.png" onclick="wordle()">
   </div>
   <div class="col-xs-12" id="copied">
     <p>Copied to Clipboard!</p>

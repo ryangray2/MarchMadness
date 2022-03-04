@@ -2,6 +2,11 @@ var lastPos = "begin";
 var moneyLeft = 150;
 var roster = [];
 var rating = 0;
+var bgCount = 0;
+
+var startPressed = false;
+
+var picsArr =["melo2.png", "kemba.png", "jj.png", "curry2.png", "tyler.png", "noah2.png"];
 
 var results = {
   three: 0,
@@ -71,6 +76,7 @@ function getResults() {
 
 
 function test() {
+  generatePlayerImagesBG()
   var avg = 0;
   var peak = 0;
   var avgD = 0;
@@ -235,26 +241,128 @@ function firstButton() {
   document.getElementById("secondButtonRow").style.display = "block";
 }
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+// function generatePlayerImagesBG() {
+//
+//   var cont = document.getElementById("playerImagesBG");
+//   while (bgCount < 100) {
+//    (function (bgCount) {
+//      setTimeout(function() {
+//        // let w = window.innerWidth;
+//        // let h = window.innerHeight;
+//
+//        // var xAxis = getRandomInt(75) - 37;
+//        // var yAxis = getRandomInt(75) - 37;
+//        var xAxis = getRandomInt(100);
+//        var yAxis = getRandomInt(100);
+//        var size = getRandomInt(40) + 10;
+//
+//
+//
+//        var picNum = getRandomInt(picsArr.length);
+//
+//        var pic = document.createElement("img");
+//        pic.classList.add("playerPicBG");
+//        pic.setAttribute("src", picsArr[picNum]);
+//        pic.style.left = xAxis.toString() + "%";
+//        pic.style.top = yAxis.toString() + "%";
+//        pic.style.width = size.toString() + "vh";
+//
+//        cont.appendChild(pic);
+//
+//        setTimeout(function() {
+//          size += 5
+//          pic.style.width = size.toString() + "vh";
+//        }, 500)
+//
+//        setTimeout(function() {
+//          cont.removeChild(pic)
+//        }, 1000)
+//
+//
+//      }, 1000 * bgCount)
+//    }) (bgCount++)
+//   }
+//
+// }
+
+function generatePlayerImagesBG() {
+  if (startPressed) {
+    return;
+  }
+
+  var cont = document.getElementById("playerImagesBG");
+       // let w = window.innerWidth;
+       // let h = window.innerHeight;
+
+       // var xAxis = getRandomInt(75) - 37;
+       // var yAxis = getRandomInt(75) - 37;
+       var xAxis = getRandomInt(100) - 25;
+       var yAxis = getRandomInt(100) - 25;
+       var size = getRandomInt(40) + 10;
+
+
+
+       var picNum = getRandomInt(picsArr.length);
+
+       var pic = document.createElement("img");
+       pic.classList.add("playerPicBG");
+       pic.setAttribute("src", picsArr[picNum]);
+       pic.style.left = xAxis.toString() + "%";
+       pic.style.top = yAxis.toString() + "%";
+       pic.style.width = size.toString() + "vh";
+
+       cont.appendChild(pic);
+
+       setTimeout(function() {
+         size += 5
+         pic.style.width = size.toString() + "vh";
+       }, 500)
+
+       setTimeout(function() {
+         cont.removeChild(pic)
+       }, 1000)
+
+       setTimeout(function() {
+         generatePlayerImagesBG()
+       }, 1000)
+}
+
+
+
 
 function secondButton() {
+  startPressed = true;
+  document.getElementById("loading").style.display = "block";
   document.getElementById("howToTitleRow").style.display = "none";
   document.getElementById("howFirstRow").style.display = "none";
   document.getElementById("how1ARow").style.display = "none";
   document.getElementById("secondButtonRow").style.display = "none";
   document.getElementById("selectTop").style.display = "block";
   document.getElementById("positionBar").style.display = "block";
-  document.getElementById("playersAll").style.display = "block";
-  document.getElementById("loading").style.display = "block";
-  createPlayerList("none");
 
+
+
+  document.body.style.backgroundSize = "auto";
+
+  setTimeout(
+    function() {
+      createPlayerList("none");
+        document.getElementById("playersAll").style.display = "block";
+    }, 1100);
 
   setTimeout(
     function(){
       document.getElementById("loading").style.display = "none";
       document.getElementById("teamNav").classList.add("wholeNav");
       document.getElementById("playersAll").classList.add("playerAni-target");
+
       setSpecCircle();
       setSpecCircle2();
+      createPlayerList("none");
       scroll(0,0);
     }, 2000);
 }
@@ -336,6 +444,22 @@ function createPlayerList(input) {
       lastNRow.appendChild(lastNCol);
       playerCol.appendChild(lastNRow);
 
+
+      var schoolRow = document.createElement('div');
+      schoolRow.classList.add("row");
+
+      var schoolCol = document.createElement('div');
+      schoolCol.classList.add("col-xs-12");
+
+      var schoolText = document.createElement('h4');
+      schoolText.classList.add("playerSchool");
+      schoolText.innerHTML = players[i].school;
+
+      schoolCol.appendChild(schoolText);
+      schoolRow.appendChild(schoolCol);
+      playerCol.appendChild(schoolRow);
+
+
       // years
       var yearsRow = document.createElement('div');
       yearsRow.classList.add("row");
@@ -392,8 +516,8 @@ function createPlayerList(input) {
 
       var starsText = document.createElement('h5');
       starsText.classList.add("playerAllStars");
-      if (players[i].allStar > 0) {
-        starsText.innerHTML = players[i].allStar + "x All Star";
+      if (players[i].champ > 0) {
+        starsText.innerHTML = players[i].champ + "x Champion";
       }
 
 
@@ -485,7 +609,7 @@ function createPlayerList(input) {
   }
   if (input != "none") {
     var ele = document.getElementById(input);
-    ele.style.backgroundColor = "#19497f";
+    ele.style.backgroundColor = "#0c2165";
     ele.style.color = "white";
     if (lastPos != "begin") {
       var ele2 = document.getElementById(lastPos);
@@ -644,6 +768,22 @@ function sC() {
   setSpecCircle2();
 }
 
+function hoverButt(whatever) {
+  whatever.setAttribute("src", "startButtHover.png");
+}
+
+function unhoverButt(whatever) {
+  whatever.setAttribute("src", "startButt.png");
+}
+
+function sharehoverButt(whatever) {
+  whatever.setAttribute("src", "share2.png");
+}
+
+function shareunhoverButt(whatever) {
+  whatever.setAttribute("src", "share.png");
+}
+
 function setSpecCircle() {
   var specCircle = document.getElementById("specialCircle");
   var row = document.getElementById("teamCirclesRow1");
@@ -658,17 +798,17 @@ function setSpecCircle() {
 
 }
 
-function setSpecCircle2() {
-  var specCircle = document.getElementById("specialCircle2");
-  var row = document.getElementById("teamCirclesRow1");
-  var step1 = (62.5 * 3) / window.innerWidth;
-  var step2 = 1 - step1;
-  var step3 = step2 / 2;
-  var step4 = window.innerWidth * step3
-  // var final = window.innerWidth - step3;
-  specCircle.style.width = step4 + "px";
-  console.log("hello");
-}
+// function setSpecCircle2() {
+//   var specCircle = document.getElementById("specialCircle2");
+//   var row = document.getElementById("teamCirclesRow1");
+//   var step1 = (62.5 * 3) / window.innerWidth;
+//   var step2 = 1 - step1;
+//   var step3 = step2 / 2;
+//   var step4 = window.innerWidth * step3
+//   // var final = window.innerWidth - step3;
+//   specCircle.style.width = step4 + "px";
+//   console.log("hello");
+// }
 
 function removePlayer(input) {
     moneyLeft += input.price;
