@@ -7,6 +7,7 @@ var bgCount = 0;
 var startPressed = false;
 
 var picsArr =["melo2.png", "kemba.png", "jj.png", "curry2.png", "tyler.png", "noah2.png"];
+var loadpicsArr = [["burkesil.png", "burkefull.png"], ["russSil.png", "russFull.png"]]
 
 var results = {
   three: 0,
@@ -77,6 +78,10 @@ function getResults() {
 
 function test() {
   generatePlayerImagesBG()
+  players.sort(function(a, b){return b.price - a.price});
+  for (let i = 0; i < players.length; i++) {
+    console.log(players[i].firstName + " " + players[i].lastName + ": ($" + players[i].price + ")");
+  }
   var avg = 0;
   var peak = 0;
   var avgD = 0;
@@ -335,14 +340,18 @@ function generatePlayerImagesBG() {
 
 
 function secondButton() {
+  var picNum = getRandomInt(loadpicsArr.length);
+  document.getElementById("loadingPlayer").setAttribute("src", loadpicsArr[picNum][0]);
+  document.getElementById("loadingPlayer2").setAttribute("src", loadpicsArr[picNum][1]);
+
+
   startPressed = true;
   document.getElementById("loading").style.display = "block";
   document.getElementById("howToTitleRow").style.display = "none";
   document.getElementById("howFirstRow").style.display = "none";
   document.getElementById("how1ARow").style.display = "none";
   document.getElementById("secondButtonRow").style.display = "none";
-  document.getElementById("selectTop").style.display = "block";
-  document.getElementById("positionBar").style.display = "block";
+
 
 
 
@@ -352,6 +361,8 @@ function secondButton() {
     function() {
       createPlayerList("none");
         document.getElementById("playersAll").style.display = "block";
+        document.getElementById("selectTop").style.display = "block";
+        document.getElementById("positionBar").style.display = "block";
     }, 1100);
 
   setTimeout(
@@ -704,6 +715,7 @@ function addPlayer(input) {
       cir.style.backgroundImage = "none";
       var cln = cir.cloneNode(true);
       document.getElementById("clone").appendChild(cln);
+      document.body.style.backgroundImage = "url('beigeNoDots.jpg')";
                           document.getElementById("selectTop").style.display = "none";
                           document.getElementById("playersAll").style.display = "none";
                         document.getElementById("positionBar").style.display = "none";

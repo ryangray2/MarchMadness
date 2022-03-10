@@ -201,8 +201,8 @@ var carmeloAnthony = {
   ast: 2.2,
   three: 33,
   defWS: 3.1,
-  offWS: 2.7,
-  wS: 5.8,
+  offWS: 6.7,
+  wS: 9.8,
   usage: 29,
   tough: true,
   headshot: "https://www.sports-reference.com/req/202102081/cbb/images/players/carmelo-anthony-1.jpg",
@@ -1144,9 +1144,9 @@ var nickCollison = {
   reb: 10.0,
   ast: 2.2,
   three: 34,
-  defWS: 5.4,
+  defWS: 4.4,
   offWS: 3.8,
-  wS: 9.1,
+  wS: 8.1,
   per: 29.9, /// fix
   usage: 22.6,
   tough: true,
@@ -1557,7 +1557,7 @@ var michaelBeasley = {
   tough: true,
   headshot: "https://ftw.usatoday.com/wp-content/uploads/sites/90/2017/09/ia01_v2_billbrd_beasley_26.jpg?crop=0px%2C45px%2C2688px%2C1611px&resize=1000%2C600",
   pic: "https://www.si.com/.image/c_fit%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_620/MTY4MjU3MzgxNzg0NjkyNjM3/michael-beasley-curtis-malone-story-inline-2.jpg",
-  price: 26
+  price: 41
 }
 
 var tjFord = {
@@ -2586,6 +2586,33 @@ var zionWilliamson = {
   price: 53
 }
 
+var thomasRobinson = {
+  firstName: "Thomas",
+  lastName: "Robinson",
+  position: "PF",
+  school: "Kansas",
+  type: "big",
+  height: "6'9\"",
+  mop: 0,
+  champ: 0,
+  allTourn: 1,
+  startYear: 2010,
+  endYear: 2012,
+  lockerRoomProb: false,
+  reb: 11.9,
+  ast: 1.8,
+  three: 0,
+  defWS: 3.7,
+  offWS: 3.5,
+  wS: 7.2,
+  per: 29.9, /// fix
+  usage: 26.4,
+  tough: true,
+  headshot: "https://i.insider.com/4f7603f7ecad04da7a00002a?width=600&format=jpeg&auto=webp",
+  pic: "https://img.bleacherreport.net/img/images/photos/001/747/110/142013099_crop_north.jpg?1339660134&w=3072&h=2048",
+  price: 18
+}
+
 var preplayers = [
   christianLaettner,
   shaneBattier,
@@ -2677,7 +2704,8 @@ var preplayers = [
   treyBurke,
   draymondGreen,
   jalenBrunson,
-  zionWilliamson
+  zionWilliamson,
+  thomasRobinson
 ]
 
 var players = [];
