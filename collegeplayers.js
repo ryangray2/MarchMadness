@@ -288,7 +288,7 @@ var kembaWalker = {
   tough: true,
   headshot: "https://i.pinimg.com/originals/0e/73/76/0e737600b51f21187a8d8ff8627dc509.jpg",
   pic: "http://media.lehighvalleylive.com/sports_impact/photo/kemba-walker-eace4b3d9b859c69.jpg",
-  price: 48
+  price: 51
 }
 
 var milesSimon = {
@@ -1550,14 +1550,14 @@ var michaelBeasley = {
   ast: 1.2,
   three: 38,
   defWS: 1.4,
-  offWS: 5.9,
-  wS: 7.2,
+  offWS: 7.9,
+  wS: 9.2,
   per: 29.9, /// fix
   usage: 35,
   tough: true,
   headshot: "https://ftw.usatoday.com/wp-content/uploads/sites/90/2017/09/ia01_v2_billbrd_beasley_26.jpg?crop=0px%2C45px%2C2688px%2C1611px&resize=1000%2C600",
   pic: "https://www.si.com/.image/c_fit%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_620/MTY4MjU3MzgxNzg0NjkyNjM3/michael-beasley-curtis-malone-story-inline-2.jpg",
-  price: 41
+  price: 48
 }
 
 var tjFord = {

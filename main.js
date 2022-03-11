@@ -305,8 +305,8 @@ function generatePlayerImagesBG() {
 
        // var xAxis = getRandomInt(75) - 37;
        // var yAxis = getRandomInt(75) - 37;
-       var xAxis = getRandomInt(100) - 25;
-       var yAxis = getRandomInt(100) - 25;
+       var xAxis = getRandomInt(30) + 20;
+       var yAxis = getRandomInt(22) + 27;
        var size = getRandomInt(40) + 10;
 
 
