@@ -1536,7 +1536,7 @@ var andrewBogut = {
 var michaelBeasley = {
   firstName: "Michael",
   lastName: "Beasley",
-  position: "PF",
+  position: "SF",
   school: "Kansas State",
   type: "wing",
   height: "6'9\"",

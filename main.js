@@ -165,7 +165,7 @@ function test() {
       createPlayerList("C");
   });
 
-  players.sort(function(a, b){return b.price - a.price});
+  players.sort(function(a, b){return b.wS - a.wS});
 
   // var testData = players;
   //   // testData.sort(function(a, b){return (b.per + (b.wS / 2)) - (a.per + (a.wS / 2))});
